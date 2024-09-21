@@ -1,4 +1,5 @@
-DSA Learning and Problem Solving Repository
+#DSA Learning and Problem Solving Repository
+
 Welcome to the DSA Learning and Problem Solving Repository! This repository is dedicated to learning, understanding, and mastering Data Structures and Algorithms (DSA). It serves as a comprehensive guide for solving DSA problems, analyzing solutions, and optimizing approaches.
 
 📚 About the Repository
