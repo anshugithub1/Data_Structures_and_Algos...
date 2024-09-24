@@ -30,7 +30,7 @@ Output: false
 
 Constraints:
 
-1 <= n <= 231 - 1
+1 <= n <= 2^31 - 1
 
 
 */
