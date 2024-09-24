@@ -47,7 +47,7 @@ Constraints:
 
 // Solution
 
-//------------------------------------------>>Approach-1: recursive solution
+//------------------------------------------>>Approach-1: 
 #include<bits/stdc++.h>
 using namespace std;
 
