@@ -35,7 +35,7 @@ nums[i] != nums[i + 1] for all valid i.
 #include<bits/stdc++.h>
 using namespace std;
 
-//------------------------------------------>>Approach-1:  Using STL method direct solution
+//------------------------------------------>>Approach-1:  Using STL method direct solution -- O(N)
 
 class Solution {
 public:
@@ -46,5 +46,33 @@ public:
             return max_element(nums.begin(),nums.end())-nums.begin();
             // max_element() takes linear time complexity with one less than the number of elements compared
         }
+    }
+};
+
+//------------------------------------------>>Approach-1:  Writing Binary solution -- O(logN)
+
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+
+        int  n = nums.size();
+        int l  = 0;
+        int r  =  n-1;
+    
+        while( l<r ){  
+            int mid  =  l + (r-l)/2 ;
+            // NOTE - if you will swap the order of the if - else if conditions you may get Runtime error.
+            if(nums[mid]>nums[mid+1] ){
+                r = mid;
+            }
+            else if(nums[mid]>nums[mid+1] && nums[mid]>nums[mid-1]){
+                return mid;
+            }
+            else{
+                l = mid+1; // if here you will do  l = mid  --> TLE
+            }
+        }
+// NOTE -  here we are returning Left   
+    return l;
     }
 };
