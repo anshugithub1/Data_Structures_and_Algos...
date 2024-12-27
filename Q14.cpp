@@ -1,32 +1,31 @@
 /*
-Leetcode-->543. Diameter of Binary Tree
+Leetcode-->162. Find Peak Element
 Problem statement:
-Given the root of a binary tree, return the length of the diameter of the tree.
+A peak element is an element that is strictly greater than its neighbors.
 
-The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
+Given a 0-indexed integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
 
-The length of a path between two nodes is represented by the number of edges between them.
+You may imagine that nums[-1] = nums[n] = -∞. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.
+
+You must write an algorithm that runs in O(log n) time.
 
 Test cases:
 
 Example 1:
 
-Input: root = [1,2,3,4,5]
-Output: 3
-Explanation: 3 is the length of the path [4,2,1,3] or [5,2,1,3].
-
-
+Input: nums = [1,2,3,1]
+Output: 2
+Explanation: 3 is a peak element and your function should return the index number 2.
 Example 2:
 
-Input: root = [1,2]
-Output: 1
-
-
+Input: nums = [1,2,1,3,5,6,4]
+Output: 5
+Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.
  
-
 Constraints:
-The number of nodes in the tree is in the range [1, 10^4].
--100 <= Node.val <= 100
+1 <= nums.length <= 1000
+-2^31 <= nums[i] <= 2^31 - 1
+nums[i] != nums[i + 1] for all valid i.
 
 */
 
@@ -36,4 +35,16 @@ The number of nodes in the tree is in the range [1, 10^4].
 #include<bits/stdc++.h>
 using namespace std;
 
+//------------------------------------------>>Approach-1:  Using STL method direct solution
 
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+        if (nums.size() == 1){
+            return 0;
+        }else {
+            return max_element(nums.begin(),nums.end())-nums.begin();
+            // max_element() takes linear time complexity with one less than the number of elements compared
+        }
+    }
+};
