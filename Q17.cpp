@@ -67,3 +67,35 @@ public:
     return ans;
     }
 };
+
+// ------------------------------------------>> level by level traversal of binary tree... a different approach
+
+
+class Solution {
+public:
+    int findBottomLeftValue(TreeNode* root) {
+        queue<TreeNode*> que;
+
+        que.push(root);
+        TreeNode* LeftmostNodeAtAnyLevel;
+        while(!que.empty()){
+            int n = que.size(); // at the moment all the elements at a particular level are in the queue .
+
+            LeftmostNodeAtAnyLevel = que.front();
+
+// poping out all the elements of particular level and pushing their childrens into the queue --> in one go..
+            while(n--){
+                TreeNode* node = que.front();
+                que.pop();
+                if(node->left){
+                    que.push(node->left);
+                }
+                if(node->right){
+                    que.push(node->right);
+                }
+            }
+
+        }
+    return LeftmostNodeAtAnyLevel->val;
+    }
+};
