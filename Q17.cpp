@@ -40,7 +40,7 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
- // --------------------------------------------->> simple BFS traversal with a little tweak
+ // --------------------------------------------->> Approach-1: Simple BFS traversal with a little tweak
 class Solution {
 public:
     int findBottomLeftValue(TreeNode* root) {
@@ -68,7 +68,7 @@ public:
     }
 };
 
-// ------------------------------------------>> level by level traversal of binary tree... a different approach
+// ------------------------------------------>> Approach-2: Level by level traversal of binary tree... a different approach
 
 
 class Solution {
