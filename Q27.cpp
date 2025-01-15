@@ -74,7 +74,7 @@ public:
     }    
 };
 
-// -------------------------------------------------->> Approach : 2 --> for LOOP ------------------------------>> 
+// -------------------------------------------------->> Approach : 2 --> Backtracking ------------------------------>> 
 class Solution {
 public:
     std::vector<std::string> letterCombinations(std::string digits) {
